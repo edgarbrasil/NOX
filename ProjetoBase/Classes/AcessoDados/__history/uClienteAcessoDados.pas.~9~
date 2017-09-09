@@ -1,0 +1,125 @@
+unit uClienteAcessoDados;
+
+interface
+
+uses FireDAC.Comp.Client, uAcessoDadosBase, uCliente;
+
+type
+  TClienteAcessoDados = class(TAcessoDadosBase)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    constructor Create;
+    destructor Destroy; override;
+
+    function Obter(Codigo: Integer): TCliente; overload;
+    function Obter(Nome: String): TCliente; overload;
+    procedure Inserir(Cliente: TCliente);
+    procedure Atualizar(Cliente: TCliente);
+    procedure Excluir(Codigo: Integer);
+
+    {
+    demais métodos que controlam o cliente
+    }
+  published
+    { published declarations }
+  end;
+
+implementation
+
+uses SysUtils;
+
+{ TClienteAcessoDados }
+
+constructor TClienteAcessoDados.Create;
+begin
+  inherited;
+end;
+
+destructor TClienteAcessoDados.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TClienteAcessoDados.Inserir(Cliente: TCliente);
+var
+  FDQuery: TFDQuery;
+begin
+  try
+    FDQuery := CriarDataSet;
+    try
+      FDQuery.SQL.Text :=
+        'INSERT INTO cliente '+
+        '      (SEQ_cliente '+
+        '      ,DS_nome) '+
+        'VALUES '+
+        '      (:SEQ_cliente '+
+        '      ,:DS_nome)';
+      FDQuery.Params.ParamByName('SEQ_cliente').AsInteger := Cliente.Codigo;
+      FDQuery.Params.ParamByName('DS_nome').AsInteger := Cliente.Nome;
+    finally
+      DestruirDataSet(FDQuery);
+    end;
+  except
+    on E: Exception do
+      raise Exception.CreateFmt('Falha ao inserir ao inserir registro na classe TClienteAcessoDados. %s.', [E.Message]);
+  end;
+end;
+
+procedure TClienteAcessoDados.Atualizar(Cliente: TCliente);
+var
+  FDQuery: TFDQuery;
+begin
+  try
+    FDQuery := CriarDataSet;
+    try
+      FDQuery.SQL.Text :=
+        'UPDATE cliente SET '+
+        'DS_nome = :DS_nome '+
+        'WHERE SEQ_cliente = :SEQ_cliente';
+      FDQuery.Params.ParamByName('DS_nome').AsInteger := Cliente.Nome;
+      FDQuery.Params.ParamByName('SEQ_cliente').AsInteger := Cliente.Codigo;
+    finally
+      DestruirDataSet(FDQuery);
+    end;
+  except
+    on E: Exception do
+      raise Exception.CreateFmt('Falha ao inserir ao atualizar registro na classe TClienteAcessoDados. %s.', [E.Message]);
+  end;
+end;
+
+procedure TClienteAcessoDados.Excluir(Codigo: Integer);
+var
+  FDQuery: TFDQuery;
+begin
+  try
+    FDQuery := CriarDataSet;
+    try
+      FDQuery.SQL.Text :=
+        'delete from cliente '+
+        'WHERE SEQ_cliente = :SEQ_cliente';
+      FDQuery.Params.ParamByName('SEQ_cliente').AsInteger := Codigo;
+    finally
+      DestruirDataSet(FDQuery);
+    end;
+  except
+    on E: Exception do
+      raise Exception.CreateFmt('Falha ao inserir ao atualizar registro na classe TClienteAcessoDados. %s.', [E.Message]);
+  end;
+end;
+
+function TClienteAcessoDados.Obter(Nome: String): TCliente;
+begin
+
+end;
+
+function TClienteAcessoDados.Obter(Codigo: Integer): TCliente;
+begin
+
+end;
+
+end.

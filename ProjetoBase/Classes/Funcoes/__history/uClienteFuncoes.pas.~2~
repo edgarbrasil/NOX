@@ -1,0 +1,30 @@
+unit uClienteFuncoes;
+
+interface
+
+uses uCliente{, uClienteData};
+
+type
+  TClienteFuncoes = class()
+  private
+    { private declarations }
+    //FClienteData: TClienteData;
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    constructor Create;
+    destructor Destroy; override;
+
+    function Obter(Codigo: Integer): TCliente; overload;
+    function Obter(Nome: String): TCliente; overload;
+    procedure Inserir(Cliente: TCliente);
+    procedure Atualizar(Cliente: TCliente);
+    procedure Excluir(Codigo: Integer);
+  end;
+
+implementation
+
+uses SysUtils;
+
+end.

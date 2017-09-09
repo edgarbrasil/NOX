@@ -1,0 +1,25 @@
+unit uMercadoriaGrupo;
+
+interface
+
+uses uEntidadeBase;
+
+type
+  TMercadoriaGrupo = class(TEntidadeBase)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    constructor Create;
+    destructor Destroy; override;
+
+    property Codigo: Integer;
+		property Nome: String;
+		property CobraTaxaServico: Boolean;
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,37 @@
+unit uCliente;
+
+interface
+
+uses uEntidadeBase;
+
+type
+  TCliente = class(TEntidadebase)
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    constructor Create;
+    destructor Destroy; override;
+
+  published
+    { published declarations }
+  end;
+
+implementation
+
+{ TCliente }
+
+constructor TCliente.Create;
+begin
+  inherited;
+end;
+
+destructor TCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+end.

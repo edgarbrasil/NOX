@@ -1,0 +1,68 @@
+unit uClienteFuncoes;
+
+interface
+
+uses uCliente{, uClienteData};
+
+type
+  TClienteFuncoes = class
+  private
+    { private declarations }
+    //FClienteData: TClienteData;
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    constructor Create;
+    destructor Destroy; override;
+
+    function Obter(Codigo: Integer): TCliente;
+    procedure Inserir(Cliente: TCliente);
+    procedure Atualizar(Cliente: TCliente);
+    procedure Excluir(Codigo: Integer);
+
+    {
+    demais métodos que controlam o cliente
+    }
+  end;
+
+implementation
+
+uses SysUtils;
+
+{ TClienteFuncoes }
+
+constructor TClienteFuncoes.Create;
+begin
+  //FClienteData := TClienteData.Create;
+end;
+
+destructor TClienteFuncoes.Destroy;
+begin
+  {if (Assigned(FClienteData)) then
+    FreeAndNil(FClienteData);}
+
+  inherited;
+end;
+
+procedure TClienteFuncoes.Inserir(Cliente: TCliente);
+begin
+  //FClienteData.Inserir(Cliente);
+end;
+
+procedure TClienteFuncoes.Atualizar(Cliente: TCliente);
+begin
+  //FClienteData.Atualizar(Cliente);
+end;
+
+procedure TClienteFuncoes.Excluir(Codigo: Integer);
+begin
+  //FClienteData..Excluir(Codigo);
+end;
+
+function TClienteFuncoes.Obter(Codigo: Integer): TCliente;
+begin
+  //Result := FClienteData.Obter(Codigo);
+end;
+
+end.

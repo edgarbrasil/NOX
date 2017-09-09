@@ -1,0 +1,10 @@
+unit uConstantes;
+
+interface
+
+implementation
+
+const
+  NOME_ARQUIVO_CONFIGURACAO = 'Vendas.ini';
+
+end.

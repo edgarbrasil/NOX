@@ -1,0 +1,43 @@
+unit uCliente;
+
+interface
+
+uses uEntidadeBase;
+
+type
+  TCliente = class(TEntidadebase)
+  private
+    FCodigo: Integer;
+    FNome: String;
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    constructor Create;
+    destructor Destroy; override;
+
+    property Codigo: Integer read FCodigo write FCodigo;
+    property Nome: String read FNome write FNome;
+  end;
+
+implementation
+
+uses SysUtils;
+
+{ TCliente }
+
+constructor TCliente.Create;
+begin
+  inherited;
+  FCodigo := 0;
+  FNome := EmptyStr;
+end;
+
+destructor TCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+end.

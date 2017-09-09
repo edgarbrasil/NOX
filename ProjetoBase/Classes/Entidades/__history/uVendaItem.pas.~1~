@@ -1,0 +1,24 @@
+unit uVendaItem;
+
+interface
+
+type
+  TVendaItem = class
+  private
+    { private declarations }
+  public
+    { public declarations }
+    constructor Create;
+    destructor Destroy; override;
+
+    property Codigo: Integer;
+		property CodigoMercadoria: Integer;
+    property Quantidade: Double;
+    property Valor: Currency;
+  end;
+
+implementation
+
+uses SysUtils;
+
+end.

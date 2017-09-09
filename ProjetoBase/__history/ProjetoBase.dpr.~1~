@@ -1,0 +1,23 @@
+program ProjetoBase;
+
+uses
+  Vcl.Forms,
+  uPrincipal in 'uPrincipal.pas' {frmPrincipal},
+  uAcessoDadosBase in 'Classes\AcessoDados\uAcessoDadosBase.pas',
+  uFuncoesBase in 'Classes\Funcoes\uFuncoesBase.pas',
+  uParametrosBase in 'Classes\Parametros\uParametrosBase.pas',
+  uEntidadeBase in 'Classes\Entidades\uEntidadeBase.pas',
+  uConexaoBD in 'Util\Global\uConexaoBD.pas',
+  uConstantes in 'Util\uConstantes.pas',
+  uCliente in 'Classes\Entidades\uCliente.pas',
+  uClienteAcessoDados in 'Classes\AcessoDados\uClienteAcessoDados.pas',
+  uClienteFuncoes in 'Classes\Funcoes\uClienteFuncoes.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

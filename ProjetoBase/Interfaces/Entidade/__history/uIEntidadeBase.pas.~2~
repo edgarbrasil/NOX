@@ -1,0 +1,13 @@
+unit uIEntidadeBase;
+
+interface
+
+type
+  IEntidadeBase = interface
+  ['{06D23FEB-EE75-4FCC-B1DF-B70C57FEFF77}']
+  class function CriarObjeto: IEntidadeBase;
+  end;
+
+implementation
+
+end.
