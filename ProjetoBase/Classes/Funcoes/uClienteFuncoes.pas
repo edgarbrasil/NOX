@@ -2,7 +2,7 @@ unit uClienteFuncoes;
 
 interface
 
-uses uCliente, uClienteAcessoDados;
+uses uCliente, uClienteAcessoDados, FireDAC.Comp.Client;
 
 type
   TClienteFuncoes = class
@@ -13,7 +13,7 @@ type
     { protected declarations }
   public
     { public declarations }
-    constructor Create;
+    constructor Create(FDCustomConnection: TFDCustomConnection);
     destructor Destroy; override;
 
     function Obter(Codigo: Integer): TCliente;
@@ -32,9 +32,9 @@ uses SysUtils;
 
 { TClienteFuncoes }
 
-constructor TClienteFuncoes.Create;
+constructor TClienteFuncoes.Create(FDCustomConnection: TFDCustomConnection);
 begin
-  FClienteAcessoDados := TClienteAcessoDados.Create;
+  FClienteAcessoDados := TClienteAcessoDados.Create(FDCustomConnection);
 end;
 
 destructor TClienteFuncoes.Destroy;

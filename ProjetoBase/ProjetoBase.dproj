@@ -122,6 +122,11 @@
         <DCCReference Include="Classes\Entidades\uVenda.pas"/>
         <DCCReference Include="Classes\Entidades\uVendaItem.pas"/>
         <DCCReference Include="uMercadoriaAcessoDados.pas"/>
+        <DCCReference Include="Unit1.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Classes\Entidades\uClientes.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

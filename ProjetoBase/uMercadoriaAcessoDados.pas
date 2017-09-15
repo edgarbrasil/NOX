@@ -13,9 +13,6 @@ type
     { protected declarations }
   public
     { public declarations }
-
-  published
-    { published declarations }
   end;
 
 implementation

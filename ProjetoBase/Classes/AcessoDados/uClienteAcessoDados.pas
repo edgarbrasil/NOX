@@ -12,7 +12,7 @@ type
     { protected declarations }
   public
     { public declarations }
-    constructor Create;
+    constructor Create(FDCustomConnection: TFDCustomConnection);
     destructor Destroy; override;
 
     function Obter(Codigo: Integer): TCliente;
@@ -33,7 +33,7 @@ uses SysUtils;
 
 constructor TClienteAcessoDados.Create;
 begin
-  inherited;
+  inherited Create(FDCustomConnection);
 end;
 
 destructor TClienteAcessoDados.Destroy;
