@@ -32,7 +32,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 304
+    Left = 328
     Top = 200
   end
 end
