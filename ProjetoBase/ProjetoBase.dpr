@@ -13,15 +13,19 @@ uses
   uClienteAcessoDados in 'Classes\AcessoDados\uClienteAcessoDados.pas',
   uClienteFuncoes in 'Classes\Funcoes\uClienteFuncoes.pas',
   uIEntidadeBase in 'Interfaces\Entidade\uIEntidadeBase.pas',
-  uFactoryEntidade in 'Classes\Entidades\uFactoryEntidade.pas',
   uEnumeradores in 'Util\uEnumeradores.pas',
   uMercadoriaGrupo in 'Classes\Entidades\uMercadoriaGrupo.pas',
   uMercadoria in 'Classes\Entidades\uMercadoria.pas',
   uVenda in 'Classes\Entidades\uVenda.pas',
   uVendaItem in 'Classes\Entidades\uVendaItem.pas',
   uMercadoriaAcessoDados in 'uMercadoriaAcessoDados.pas',
-  Unit1 in 'Unit1.pas' {Form1},
-  uClientes in 'Classes\Entidades\uClientes.pas';
+  uClientes in 'Classes\Entidades\Colecoes\uClientes.pas',
+  uColecaoBase in 'Classes\Entidades\Colecoes\uColecaoBase.pas',
+  uFactoryEntidade in 'Factory\uFactoryEntidade.pas',
+  uMercadorias in 'Classes\Entidades\Colecoes\uMercadorias.pas',
+  uMercadoriaGrupos in 'Classes\Entidades\Colecoes\uMercadoriaGrupos.pas',
+  uVendas in 'Classes\Entidades\Colecoes\uVendas.pas',
+  uVendaItens in 'Classes\Entidades\Colecoes\uVendaItens.pas';
 
 {$R *.res}
 

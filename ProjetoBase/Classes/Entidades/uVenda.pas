@@ -2,7 +2,7 @@ unit uVenda;
 
 interface
 
-uses uEntidadeBase;
+uses uEntidadeBase, uCliente;
 
 type
   TVenda = class(TEntidadeBase)
@@ -12,8 +12,8 @@ type
     FValorDesconto: Currency;
     FCodigo: Integer;
     FValorTotal: Currency;
-    FCodigoCliente: Integer;
     FData: TDateTime;
+    FCliente: TCliente;
   public
     { public declarations }
     constructor Create;
@@ -21,8 +21,8 @@ type
 
     property Codigo: Integer read FCodigo write FCodigo;
     property Data: TDateTime read FData write FData;
-		property CodigoCliente: Integer read FCodigoCliente write FCodigoCliente;
     property ValorDesconto: Currency read FValorDesconto write FValorDesconto;
+    property Cliente: TCliente read FCliente write FCliente;
     property TaxaServico: Double read FTaxaServico write FTaxaServico;
     property ValorTotal: Currency read FValorTotal write FValorTotal;
   end;
@@ -36,16 +36,17 @@ uses SysUtils;
 constructor TVenda.Create;
 begin
   FCodigo := 0;
-  FCodigoCliente := 0;
   FData := 0;
   FTaxaServico := 0;
   FValorDesconto := 0;
   FValorTotal := 0;
+  FCliente := TCliente.Create;
 end;
 
 destructor TVenda.Destroy;
 begin
-
+  if (Assigned(FCliente)) then
+    FreeAndNIl(FCliente);
   inherited;
 end;
 
