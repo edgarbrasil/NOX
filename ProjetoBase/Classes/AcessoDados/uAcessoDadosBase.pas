@@ -14,6 +14,9 @@ type
     function CriarDataSet: TFDQuery;
     function ObterConnection: TFDCustomConnection;
     procedure DestruirDataSet(FDQuery: TFDQuery);
+    procedure Commit;
+    procedure Rollback;
+    procedure StartTransaction;
   public
     { public declarations }
     constructor Create(FDCustomConnection: TFDCustomConnection);
@@ -52,6 +55,24 @@ end;
 function TAcessoDadosBase.ObterConnection: TFDCustomConnection;
 begin
   Result := FFDCustomConnection;
+end;
+
+procedure TAcessoDadosBase.Commit;
+begin
+  while FFDCustomConnection.InTransaction do
+    FFDCustomConnection.Commit;
+end;
+
+procedure TAcessoDadosBase.Rollback;
+begin
+  while FFDCustomConnection.InTransaction do
+    FFDCustomConnection.Rollback;
+end;
+
+procedure TAcessoDadosBase.StartTransaction;
+begin
+  if not FFDCustomConnection.InTransaction then
+    FFDCustomConnection.Rollback;
 end;
 
 procedure TAcessoDadosBase.DestruirDataSet(FDQuery: TFDQuery);

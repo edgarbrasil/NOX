@@ -22,7 +22,6 @@ implementation
 
 uses SysUtils, TypInfo, uCliente, uMercadoria, uMercadoriaGrupo, uVenda, uVendaItem;
 
-
 { TFactoryEntidade }
 
 constructor TFactoryEntidade.Create;

@@ -128,6 +128,7 @@
         <DCCReference Include="Classes\Entidades\Colecoes\uMercadoriaGrupos.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uVendas.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uVendaItens.pas"/>
+        <DCCReference Include="Factory\uFactoryColecao.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

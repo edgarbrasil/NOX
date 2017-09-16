@@ -54,5 +54,7 @@
     <Transaction>2017/09/16 00:21:35.100,C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Classes\Entidades\Colecoes\uVendas.pas=C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Unit2.pas</Transaction>
     <Transaction>2017/09/16 00:26:40.818,=C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Unit2.pas</Transaction>
     <Transaction>2017/09/16 00:27:07.683,C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Classes\Entidades\Colecoes\uVendaItens.pas=C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Unit2.pas</Transaction>
+    <Transaction>2017/09/16 00:41:00.032,=C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Unit2.pas</Transaction>
+    <Transaction>2017/09/16 00:41:57.673,C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Factory\uFactoryColecao.pas=C:\Users\Edgar\Documents\GitHub\NOX\ProjetoBase\Unit2.pas</Transaction>
   </Transactions>
 </BorlandProject>

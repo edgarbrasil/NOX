@@ -25,7 +25,8 @@ uses
   uMercadorias in 'Classes\Entidades\Colecoes\uMercadorias.pas',
   uMercadoriaGrupos in 'Classes\Entidades\Colecoes\uMercadoriaGrupos.pas',
   uVendas in 'Classes\Entidades\Colecoes\uVendas.pas',
-  uVendaItens in 'Classes\Entidades\Colecoes\uVendaItens.pas';
+  uVendaItens in 'Classes\Entidades\Colecoes\uVendaItens.pas',
+  uFactoryColecao in 'Factory\uFactoryColecao.pas';
 
 {$R *.res}
 
