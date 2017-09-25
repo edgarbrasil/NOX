@@ -25,16 +25,25 @@ type
 
 implementation
 
-uses SysUtils;
+uses SysUtils, uConstantes;
 
 { TAcessoDadosBase }
 
 constructor TAcessoDadosBase.Create(FDCustomConnection: TFDCustomConnection);
 begin
   if (not Assigned(FDCustomConnection)) then
-    raise Exception.Create('Parâmetro FDCustomConnection está nulo.');
+      raise Exception.CreateFmt(MSG_PARAMETRO_ESTA_NULO, ['FDCustomConnection']);
+
   if (not (FDCustomConnection.Connected)) then
-    raise Exception.Create('Não existe conexão ativa com o bando de dados.');
+  begin
+    try
+      FDCustomConnection.Connected := True;
+    except
+      on E: Exception do
+        raise Exception.CreateFmt('Não foi possivel ativar a conexão com o bando de dados. %s', [E.Message]);
+    end;
+
+  end;
 
   FFDCustomConnection := FDCustomConnection;
 end;

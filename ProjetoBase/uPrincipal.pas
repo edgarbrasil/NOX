@@ -10,15 +10,21 @@ uses
   Data.DB, FireDAC.Comp.Client, FireDAC.Phys.MSSQL, FireDAC.Phys.MSSQLDef,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Phys.MySQLDef, FireDAC.Phys.MySQL,
-  FireDAC.Phys.ODBCBase, FireDAC.Comp.UI, Vcl.StdCtrls;
+  FireDAC.Phys.ODBCBase, FireDAC.Comp.UI, Vcl.StdCtrls, frxClass, frxDBSet;
 
 type
   TfrmPrincipal = class(TForm)
-    FDQuery1: TFDQuery;
-    FDPhysMSSQLDriverLink1: TFDPhysMSSQLDriverLink;
-    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    Relatorio1: TfrxReport;
     Button1: TButton;
-    procedure Button1Click(Sender: TObject);
+    frxDBVenda: TfrxDBDataset;
+    qryVenda: TFDQuery;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Edit2: TEdit;
+    Label2: TLabel;
+    frxDBItens: TfrxDBDataset;
+    qryItens: TFDQuery;
+    FDConnection1: TFDConnection;
   private
     { Private declarations }
   public
@@ -30,27 +36,8 @@ var
 
 implementation
 
-uses uEntidadeBase, uFactoryEntidade, uEnumeradores, uCliente;
+uses uEntidadeBase, uEnumeradores, uCliente;
 
 {$R *.dfm}
-
-procedure TfrmPrincipal.Button1Click(Sender: TObject);
-var
-  EntidadeBase: TEntidadeBase;
-begin
-  EntidadeBase := TFactoryEntidade.InstanciarEntidade(teCliente);
-  try
-    if not (EntidadeBase is TCliente) then
-    begin
-      showmessage('ahauihau');
-      Exit;
-    end;
-
-    TCliente(EntidadeBase).Codigo := 0;
-    TCliente(EntidadeBase).Nome := 'TEste';
-  finally
-    FreeAndNil(EntidadeBase);
-  end;
-end;
 
 end.

@@ -2,15 +2,13 @@ unit uClienteFuncoes;
 
 interface
 
-uses uCliente, uClienteAcessoDados, FireDAC.Comp.Client;
+uses uFuncoesBase, uCliente, uClienteAcessoDados, FireDAC.Comp.Client;
 
 type
-  TClienteFuncoes = class
+  TClienteFuncoes = class(TFuncoesBase)
   private
     { private declarations }
     FClienteAcessoDados: TClienteAcessoDados;
-  protected
-    { protected declarations }
   public
     { public declarations }
     constructor Create(FDCustomConnection: TFDCustomConnection);
@@ -20,10 +18,6 @@ type
     procedure Inserir(Cliente: TCliente);
     procedure Atualizar(Cliente: TCliente);
     procedure Excluir(Codigo: Integer);
-
-    {
-    demais métodos que controlam o cliente
-    }
   end;
 
 implementation

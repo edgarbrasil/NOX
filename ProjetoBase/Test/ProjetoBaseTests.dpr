@@ -16,8 +16,7 @@ program ProjetoBaseTests;
 
 uses
   DUnitTestRunner,
-  uClienteFuncoesTest in 'uClienteFuncoesTest.pas',
-  uClienteFuncoes in '..\Classes\Funcoes\uClienteFuncoes.pas';
+  uVendaFuncoesTest in 'uVendaFuncoesTest.pas';
 
 {$R *.RES}
 

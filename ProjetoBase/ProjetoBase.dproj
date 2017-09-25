@@ -114,21 +114,26 @@
         <DCCReference Include="Classes\Entidades\uCliente.pas"/>
         <DCCReference Include="Classes\AcessoDados\uClienteAcessoDados.pas"/>
         <DCCReference Include="Classes\Funcoes\uClienteFuncoes.pas"/>
-        <DCCReference Include="Interfaces\Entidade\uIEntidadeBase.pas"/>
         <DCCReference Include="Util\uEnumeradores.pas"/>
         <DCCReference Include="Classes\Entidades\uMercadoriaGrupo.pas"/>
         <DCCReference Include="Classes\Entidades\uMercadoria.pas"/>
         <DCCReference Include="Classes\Entidades\uVenda.pas"/>
         <DCCReference Include="Classes\Entidades\uVendaItem.pas"/>
-        <DCCReference Include="uMercadoriaAcessoDados.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uClientes.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uColecaoBase.pas"/>
-        <DCCReference Include="Factory\uFactoryEntidade.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uMercadorias.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uMercadoriaGrupos.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uVendas.pas"/>
         <DCCReference Include="Classes\Entidades\Colecoes\uVendaItens.pas"/>
-        <DCCReference Include="Factory\uFactoryColecao.pas"/>
+        <DCCReference Include="Classes\AcessoDados\uMercadoriaAcessoDados.pas"/>
+        <DCCReference Include="Classes\Funcoes\uMercadoriaFuncoes.pas"/>
+        <DCCReference Include="Classes\AcessoDados\uMercadoriaGrupoAcessoDados.pas"/>
+        <DCCReference Include="Classes\Funcoes\uMercadoriaGrupoFuncoes.pas"/>
+        <DCCReference Include="Classes\AcessoDados\uVendaItemAcessoDados.pas"/>
+        <DCCReference Include="Classes\Funcoes\uVendaItemFuncoes.pas"/>
+        <DCCReference Include="Util\uUtil.pas"/>
+        <DCCReference Include="Classes\AcessoDados\uVendaAcessoDados.pas"/>
+        <DCCReference Include="Classes\Funcoes\uVendaFuncoes.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

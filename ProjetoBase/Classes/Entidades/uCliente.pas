@@ -2,10 +2,10 @@ unit uCliente;
 
 interface
 
-uses uEntidadeBase, uIEntidadebase;
+uses uEntidadeBase;
 
 type
-  TCliente = class(TEntidadebase{, IEntidadebase})
+  TCliente = class(TEntidadebase)
   private
     FCodigo: Integer;
     FNome: String;

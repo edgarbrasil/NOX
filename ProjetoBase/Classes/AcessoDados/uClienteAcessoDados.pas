@@ -8,8 +8,7 @@ type
   TClienteAcessoDados = class(TAcessoDadosBase)
   private
     { private declarations }
-  protected
-    { protected declarations }
+    procedure ValidarParametroClienteNulo(Cliente: TCliente);
   public
     { public declarations }
     constructor Create(FDCustomConnection: TFDCustomConnection);
@@ -19,15 +18,11 @@ type
     procedure Inserir(Cliente: TCliente);
     procedure Atualizar(Cliente: TCliente);
     procedure Excluir(Codigo: Integer);
-
-    {
-    demais métodos que controlam o cliente
-    }
   end;
 
 implementation
 
-uses SysUtils;
+uses SysUtils, uConstantes;
 
 { TClienteAcessoDados }
 
@@ -42,11 +37,19 @@ begin
   inherited;
 end;
 
+procedure TClienteAcessoDados.ValidarParametroClienteNulo(Cliente: TCliente);
+begin
+  if (not Assigned(Cliente)) then
+    raise Exception.CreateFmt(MSG_PARAMETRO_ESTA_NULO, ['Cliente']);
+end;
+
 procedure TClienteAcessoDados.Inserir(Cliente: TCliente);
 var
   FDQuery: TFDQuery;
 begin
   try
+    ValidarParametroClienteNulo(Cliente);
+
     FDQuery := CriarDataSet;
     try
       FDQuery.SQL.Text :=
@@ -64,7 +67,8 @@ begin
     end;
   except
     on E: Exception do
-      raise Exception.CreateFmt('Falha ao inserir ao inserir registro na classe TClienteAcessoDados. %s.', [E.Message]);
+      raise Exception.CreateFmt(MSG_FALHA_AO_INSERIR_CLASSE_METODO_EXCEPTION,
+        ['TClienteAcessoDados', 'Inserir', E.Message]);
   end;
 end;
 
@@ -73,6 +77,8 @@ var
   FDQuery: TFDQuery;
 begin
   try
+    ValidarParametroClienteNulo(Cliente);
+
     FDQuery := CriarDataSet;
     try
       FDQuery.SQL.Text :=
@@ -87,7 +93,8 @@ begin
     end;
   except
     on E: Exception do
-      raise Exception.CreateFmt('Falha ao inserir ao atualizar registro na classe TClienteAcessoDados. %s.', [E.Message]);
+      raise Exception.CreateFmt(MSG_FALHA_AO_ATUALIZAR_CLASSE_METODO_EXCEPTION,
+        ['TClienteAcessoDados', 'Atualizar', E.Message]);
   end;
 end;
 
@@ -96,6 +103,8 @@ var
   FDQuery: TFDQuery;
 begin
   try
+    if (Codigo <= 0) then Exit;
+
     FDQuery := CriarDataSet;
     try
       FDQuery.SQL.Text :=
@@ -108,7 +117,8 @@ begin
     end;
   except
     on E: Exception do
-      raise Exception.CreateFmt('Falha ao inserir ao excluir registro na classe TClienteAcessoDados. %s.', [E.Message]);
+      raise Exception.CreateFmt(MSG_FALHA_AO_EXCLUIR_CLASSE_METODO_EXCEPTION,
+        ['TClienteAcessoDados', 'Excluir', E.Message]);
   end;
 end;
 
@@ -119,6 +129,8 @@ begin
   Result := nil;
 
   try
+    if (Codigo <= 0) then Exit;
+
     FDQuery := CriarDataSet;
     try
       FDQuery.SQL.Text :=
@@ -139,7 +151,8 @@ begin
     end;
   except
     on E: Exception do
-      raise Exception.CreateFmt('Falha ao inserir ao obter registro na classe TClienteAcessoDados. %s.', [E.Message]);
+      raise Exception.CreateFmt(MSG_FALHA_AO_OBTER_CLASSE_METODO_EXCEPTION,
+        ['TClienteAcessoDados', 'Obter', E.Message]);
   end;
 end;
 
